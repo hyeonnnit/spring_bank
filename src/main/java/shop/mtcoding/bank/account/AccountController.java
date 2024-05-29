@@ -2,6 +2,7 @@ package shop.mtcoding.bank.account;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,10 +16,11 @@ public class AccountController {
 //        log.info("Account new 됨");
 //
 //    }
-    @RequestMapping(method = RequestMethod.GET, value = "/home")
+    //@RequestMapping(method = RequestMethod.GET, value = "/home")
+    @GetMapping("/account/list")
     public String home(){
         System.out.println("home 호출됨");
-        return "home";
+        return "account/list"; // templates/home.mustache 파일을 읽어서 응답
     }
 
 }
